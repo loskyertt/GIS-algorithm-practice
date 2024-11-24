@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/sky/workspace/GIS算法实习/01基本算法/build",
+  "command": "/usr/sbin/c++  -I/home/sky/workspace/GIS算法实习/01基本算法/include -g -o CMakeFiles/test.out.dir/src/polygon.cpp.o -c /home/sky/workspace/GIS算法实习/01基本算法/src/polygon.cpp",
+  "file": "/home/sky/workspace/GIS算法实习/01基本算法/src/polygon.cpp",
+  "output": "CMakeFiles/test.out.dir/src/polygon.cpp.o"
+},
+{
+  "directory": "/home/sky/workspace/GIS算法实习/01基本算法/build",
+  "command": "/usr/sbin/c++  -I/home/sky/workspace/GIS算法实习/01基本算法/include -g -o CMakeFiles/test.out.dir/main.cpp.o -c /home/sky/workspace/GIS算法实习/01基本算法/main.cpp",
+  "file": "/home/sky/workspace/GIS算法实习/01基本算法/main.cpp",
+  "output": "CMakeFiles/test.out.dir/main.cpp.o"
+}
+]
