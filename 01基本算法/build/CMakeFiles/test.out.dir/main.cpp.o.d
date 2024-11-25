@@ -2102,4 +2102,5 @@ CMakeFiles/test.out.dir/main.cpp.o: \
  /usr/include/boost/config/no_tr1/memory.hpp \
  /usr/include/boost/algorithm/string/detail/util.hpp \
  /usr/include/boost/noncopyable.hpp \
- /usr/include/boost/geometry/io/svg/write.hpp
+ /usr/include/boost/geometry/io/svg/write.hpp \
+ /usr/include/boost/geometry/io/wkt/wkt.hpp
