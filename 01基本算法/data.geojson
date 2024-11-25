@@ -4,7 +4,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "简单多边形"
+        "name": "正方形"
       },
       "geometry": {
         "type": "Polygon",
@@ -22,7 +22,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "带孔的多边形"
+        "name": "带孔的正方形"
       },
       "geometry": {
         "type": "Polygon",

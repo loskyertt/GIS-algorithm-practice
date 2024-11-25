@@ -6,7 +6,7 @@
 /* 1.测试示例：多边形面积 */
 void testArea()
 {
-    // 1. 多边形面积（不带孔）
+    // 1.多边形面积（不带孔）
     Polygon poly1;
     poly1.addVertex(Point(1, 1));
     poly1.addVertex(Point(3, 1));
@@ -15,7 +15,15 @@ void testArea()
 
     cout << "多边形面积（不带孔）为：" << area << endl;
 
-    // 2. 多边形面积（带孔）
+    // 2.判断点与多边形的位置关系
+    bool isCon = poly1.containsPoint(Point(0, 0.5)); // 多边形外的点
+    if (isCon) {
+        cout << "该点在多边形内" << endl;
+    } else {
+        cout << "该点在多边形外" << endl;
+    }
+
+    // 3.多边形面积（带孔）
     vector<vector<Point>> rings;
 
     // 外环
