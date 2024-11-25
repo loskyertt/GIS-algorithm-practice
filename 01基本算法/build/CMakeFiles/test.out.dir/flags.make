@@ -4,7 +4,7 @@
 # compile CXX with /usr/sbin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/sky/workspace/GIS算法实习/01基本算法/include
+CXX_INCLUDES = -I/home/sky/workspace/GIS算法实习/01基本算法/include -I/usr/include/boost
 
 CXX_FLAGS = -g
 

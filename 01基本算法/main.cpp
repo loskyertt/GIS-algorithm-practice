@@ -1,7 +1,12 @@
 #include "point.hpp"
 #include "polygon.hpp"
+#include <boost/geometry.hpp>
+#include <boost/geometry/geometries/linestring.hpp>
+#include <boost/geometry/geometries/point.hpp>
+#include <boost/geometry/geometries/polygon.hpp>
 #include <iostream>
-#include <ostream>
+
+namespace bg = boost::geometry;
 
 /* 1.测试示例：多边形面积 */
 void testArea()
@@ -16,12 +21,12 @@ void testArea()
     cout << "多边形面积（不带孔）为：" << area << endl;
 
     // 2.判断点与多边形的位置关系
-    bool isCon = poly1.containsPoint(Point(0, 0.5)); // 多边形外的点
-    if (isCon) {
-        cout << "该点在多边形内" << endl;
-    } else {
-        cout << "该点在多边形外" << endl;
-    }
+    // bool isCon = poly1.containsPoint(Point(0, 0.5)); // 多边形外的点
+    // if (isCon) {
+    //     cout << "该点在多边形内" << endl;
+    // } else {
+    //     cout << "该点在多边形外" << endl;
+    // }
 
     // 3.多边形面积（带孔）
     vector<vector<Point>> rings;
@@ -67,11 +72,34 @@ void testDirection()
     }
 }
 
+/* 九交模型算法 */
+void test_9IM()
+{
+    // 定义多边形和点
+    bg::model::polygon<bg::model::d2::point_xy<double>> poly;
+    bg::append(poly, bg::model::d2::point_xy<double>(0.0, 0.0));
+    bg::append(poly, bg::model::d2::point_xy<double>(4.0, 0.0));
+    bg::append(poly, bg::model::d2::point_xy<double>(4.0, 4.0));
+    bg::append(poly, bg::model::d2::point_xy<double>(0.0, 4.0));
+    bg::append(poly, bg::model::d2::point_xy<double>(0.0, 0.0));
+
+    bg::model::d2::point_xy<double> point(2.0, 2.0);
+
+    // 判断点是否在多边形内部
+    if (bg::within(point, poly)) {
+        std::cout << "点在多边形内。" << std::endl;
+    } else {
+        std::cout << "点在多边形外。" << std::endl;
+    }
+}
+
 int main()
 {
-    testArea();
+    // testArea();
 
-    testDirection();
+    // testDirection();
+
+    test_9IM();
 
     return 0;
 }

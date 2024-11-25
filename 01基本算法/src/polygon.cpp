@@ -53,8 +53,8 @@ double Polygon::calculateAreaWithHoles(const vector<vector<Point>>& rings)
 
 bool Polygon::isOnSegment(const Point& p, const Point& segStart, const Point& segEnd) const
 {
-    double cross = (p.y - segStart.y) * (segEnd.x - segStart.x) - (p.x - segStart.x) * (segEnd.y - segStart.y);
-    if (abs(cross) > 1e-9)
+    double croP = (p.y - segStart.y) * (segEnd.x - segStart.x) - (p.x - segStart.x) * (segEnd.y - segStart.y);
+    if (abs(croP) > 1e-9)
         return false; // 不在直线上
     if (p.x < min(segStart.x, segEnd.x) || p.x > max(segStart.x, segEnd.x))
         return false;
@@ -103,5 +103,5 @@ bool Polygon::isClockwiseVector()
     // 计算向量叉积
     double croP = (vertices[topPoint].x - vertices[prev].x) * (vertices[next].y - vertices[topPoint].y) - (vertices[topPoint].y - vertices[prev].y) * (vertices[next].x - vertices[topPoint].x);
 
-    return croP > 0;
+    return croP < 0; // 为 True 表示顺时针
 }
