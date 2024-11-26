@@ -221,6 +221,15 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Path to the gdal-config tool
+GDAL_CONFIG:FILEPATH=/usr/sbin/gdal-config
+
+//Path to the GDAL include directory
+GDAL_INCLUDE_DIR:PATH=/usr/include
+
+//Path to the GDAL library
+GDAL_LIBRARY:FILEPATH=/usr/lib/libgdal.so
+
 
 ########################
 # INTERNAL cache entries
@@ -237,7 +246,7 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=31
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=0
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -371,6 +380,14 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/sbin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding GDAL
+FIND_PACKAGE_MESSAGE_DETAILS_GDAL:INTERNAL=[/usr/lib/libgdal.so][/usr/include][v3.10.0()]
+//ADVANCED property for variable: GDAL_CONFIG
+GDAL_CONFIG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GDAL_INCLUDE_DIR
+GDAL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GDAL_LIBRARY
+GDAL_LIBRARY-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_CXX_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //linker supports push/pop state

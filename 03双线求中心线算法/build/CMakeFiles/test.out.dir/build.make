@@ -96,6 +96,7 @@ test_out_EXTERNAL_OBJECTS =
 test.out: CMakeFiles/test.out.dir/main.cpp.o
 test.out: CMakeFiles/test.out.dir/build.make
 test.out: CMakeFiles/test.out.dir/compiler_depend.ts
+test.out: /usr/lib/libgdal.so
 test.out: CMakeFiles/test.out.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/sky/workspace/GIS算法实习/03双线求中心线算法/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test.out"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.out.dir/link.txt --verbose=$(VERBOSE)
