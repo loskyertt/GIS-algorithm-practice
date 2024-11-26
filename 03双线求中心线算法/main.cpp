@@ -1,71 +1,44 @@
-#include <gdal_priv.h>
-#include <iostream>
-#include <ogr_api.h>
-#include <ogrsf_frmts.h>
-#include <vector>
+#include "point.hpp"
+#include "polyline.hpp"
+#include <GL/freeglut_std.h>
 
-// 定义点类型
-struct Point {
-    double x, y;
-};
+PolyLine* globalPly = nullptr;
 
-void export_to_shapefile(const std::vector<Point>& center_line, const std::string& shapefile_path)
+// 全局回调函数
+void displayCallback()
 {
-    // 注册所有的驱动
-    GDALAllRegister();
-
-    // 创建 Shapefile 驱动
-    GDALDriver* driver = GetGDALDriverManager()->GetDriverByName("ESRI Shapefile");
-    if (!driver) {
-        std::cerr << "Shapefile driver not available!" << std::endl;
-        return;
+    if (globalPly) {
+        globalPly->display();
     }
-
-    // 创建输出文件
-    GDALDataset* dataset = driver->Create(shapefile_path.c_str(), 0, 0, 0, GDT_Unknown, nullptr);
-    if (!dataset) {
-        std::cerr << "Failed to create shapefile!" << std::endl;
-        return;
-    }
-
-    // 创建图层
-    OGRLayer* layer = dataset->CreateLayer("center_line", nullptr, wkbLineString, nullptr);
-    if (!layer) {
-        std::cerr << "Failed to create layer!" << std::endl;
-        GDALClose(dataset);
-        return;
-    }
-
-    // 创建中心线几何
-    OGRLineString line;
-    for (const auto& point : center_line) {
-        line.addPoint(point.x, point.y);
-    }
-
-    // 创建要素
-    OGRFeatureDefn* feature_defn = layer->GetLayerDefn();
-    OGRFeature* feature = OGRFeature::CreateFeature(feature_defn);
-    feature->SetGeometry(&line);
-
-    // 添加要素到图层
-    if (layer->CreateFeature(feature) != OGRERR_NONE) {
-        std::cerr << "Failed to add feature to layer!" << std::endl;
-    }
-
-    // 清理资源
-    OGRFeature::DestroyFeature(feature);
-    GDALClose(dataset);
-
-    std::cout << "Shapefile saved to " << shapefile_path << std::endl;
 }
 
-int main()
+int main(int argc, char** argv)
 {
-    // 示例中心线点
-    std::vector<Point> center_line = { { 0, 0 }, { 5, 5 }, { 10, 0 } };
+    PolyLine ply;
 
-    // 导出为 Shapefile
-    export_to_shapefile(center_line, "/home/sky/workspace/GIS算法实习/03双线求中心线算法/data/center_line.shp");
+    // 创建折线
+    ply.addVertex(Point(150, 100));
+    ply.addVertex(Point(200, 200));
+    ply.addVertex(Point(300, 150));
+    ply.addVertex(Point(400, 250));
+
+    // 生成缓冲区数据
+    ply.generateBuffer();
+
+    // 初始化 GLUT
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(500, 500);
+    glutCreateWindow("Polyline Buffer Visualization");
+
+    PolyLine::initOpenGL();
+
+    // 全局指针
+    globalPly = &ply;
+
+    glutDisplayFunc(displayCallback);
+
+    glutMainLoop();
 
     return 0;
 }

@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/polyline.o: src/polyline.cpp.o
+.PHONY : src/polyline.o
+
+# target to build an object file
+src/polyline.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/polyline.cpp.o
+.PHONY : src/polyline.cpp.o
+
+src/polyline.i: src/polyline.cpp.i
+.PHONY : src/polyline.i
+
+# target to preprocess a source file
+src/polyline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/polyline.cpp.i
+.PHONY : src/polyline.cpp.i
+
+src/polyline.s: src/polyline.cpp.s
+.PHONY : src/polyline.s
+
+# target to generate assembly for a file
+src/polyline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/polyline.cpp.s
+.PHONY : src/polyline.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/polyline.o"
+	@echo "... src/polyline.i"
+	@echo "... src/polyline.s"
 .PHONY : help
 
 

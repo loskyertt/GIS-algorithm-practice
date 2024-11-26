@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.out.dir/link.d"
   "CMakeFiles/test.out.dir/main.cpp.o"
   "CMakeFiles/test.out.dir/main.cpp.o.d"
+  "CMakeFiles/test.out.dir/src/polyline.cpp.o"
+  "CMakeFiles/test.out.dir/src/polyline.cpp.o.d"
   "test.out"
   "test.out.pdb"
 )

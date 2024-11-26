@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/sky/workspace/GIS算法实习/03双线求中心线算法/main.cpp" "CMakeFiles/test.out.dir/main.cpp.o" "gcc" "CMakeFiles/test.out.dir/main.cpp.o.d"
+  "/home/sky/workspace/GIS算法实习/03双线求中心线算法/src/polyline.cpp" "CMakeFiles/test.out.dir/src/polyline.cpp.o" "gcc" "CMakeFiles/test.out.dir/src/polyline.cpp.o.d"
   "" "test.out" "gcc" "CMakeFiles/test.out.dir/link.d"
   )
 

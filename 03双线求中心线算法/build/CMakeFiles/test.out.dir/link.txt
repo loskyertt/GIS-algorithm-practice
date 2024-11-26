@@ -1,1 +1,1 @@
-/usr/sbin/c++ -g -Wl,--dependency-file,CMakeFiles/test.out.dir/link.d CMakeFiles/test.out.dir/main.cpp.o -o test.out  /usr/lib/libgdal.so
+/usr/sbin/c++ -g -Wl,--dependency-file,CMakeFiles/test.out.dir/link.d CMakeFiles/test.out.dir/src/polyline.cpp.o CMakeFiles/test.out.dir/main.cpp.o -o test.out  /usr/lib/libOpenGL.so /usr/lib/libGLX.so /usr/lib/libGLU.so /usr/lib/libglut.so /usr/lib/libXmu.so /usr/lib/libXi.so
