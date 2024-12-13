@@ -1,3 +1,0 @@
-/home/sky/workspace/GIS算法实习/03双线求中心线算法/build/CMakeFiles/test.out.dir
-/home/sky/workspace/GIS算法实习/03双线求中心线算法/build/CMakeFiles/edit_cache.dir
-/home/sky/workspace/GIS算法实习/03双线求中心线算法/build/CMakeFiles/rebuild_cache.dir
