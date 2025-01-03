@@ -10,5 +10,9 @@ aux_source_directory(. SRC_CUR)
 add_executable(test.out ${SRC_SUB} ${SRC_CUR})
 
 target_include_directories(test.out PRIVATE include)
-# boost 库
-include_directories(/usr/include/boost)
+
+find_package(Boost REQUIRED CONFIG)
+
+target_link_libraries(test.out PRIVATE
+    Boost::boost
+)
